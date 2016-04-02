@@ -23,11 +23,13 @@ juke.factory('PlayerFactory', function ($rootScope) {
   };
 
   player.resume = function () {
+    console.log('resume');
     audio.play();
     playing = true;
   };
 
   player.start = function (song, list) {
+    console.log(song);
     player.pause();
     audio.src = song.audioUrl;
     audio.load();
