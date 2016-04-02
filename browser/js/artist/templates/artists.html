@@ -1,7 +1,8 @@
 <div>
   <h3>Artists</h3>
+  	<input style="margin-bottom: 20px" class="form-control" ng-model="artistSearch" placeholder="Search for Artist by name"></input>
     <div class="list-group">
-      <div class="list-group-item" ng-repeat="artist in artists">
+      <div class="list-group-item" ng-repeat="artist in artists | filter: {name: artistSearch}">
       <a ui-sref="artist({artistId: artist._id})">{{ artist.name }}</a>
     </div>
   </div>
